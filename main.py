@@ -224,6 +224,7 @@ class FallTemplateBot2026(ForecastBot):
             You write your rationale remembering that good forecasters put extra weight on the status quo outcome since the world changes slowly most of the time.
             {self._get_conditional_disclaimer_if_necessary(question)}
 
+            After thinking, keep your final output concise so the required answer format is fully written and not truncated.
             The last thing you write is your final answer as: "Probability: ZZ%", 0-100
             """
         )
@@ -293,6 +294,7 @@ class FallTemplateBot2026(ForecastBot):
             {self._get_conditional_disclaimer_if_necessary(question)}
             You write your rationale remembering that (1) good forecasters put extra weight on the status quo outcome since the world changes slowly most of the time, and (2) good forecasters leave some moderate probability on most options to account for unexpected outcomes.
 
+            After thinking, keep your final output concise so the required answer format is fully written and not truncated.
             The last thing you write is your final probabilities for the N options in this order {question.options} as:
             Option_A: Probability_A
             Option_B: Probability_B
@@ -382,6 +384,7 @@ class FallTemplateBot2026(ForecastBot):
             {self._get_conditional_disclaimer_if_necessary(question)}
             You remind yourself that good forecasters are humble and set wide 90/10 confidence intervals to account for unknown unknowns.
 
+            After thinking, keep your final output concise so the required answer format is fully written and not truncated.
             The last thing you write is your final answer as:
             "
             Percentile 10: XX (lowest number value)
@@ -477,6 +480,7 @@ class FallTemplateBot2026(ForecastBot):
             {self._get_conditional_disclaimer_if_necessary(question)}
             You remind yourself that good forecasters are humble and set wide 90/10 confidence intervals to account for unknown unknowns.
 
+            After thinking, keep your final output concise so the required answer format is fully written and not truncated.
             The last thing you write is your final answer as:
             "
             Percentile 10: YYYY-MM-DD (oldest date)
@@ -718,15 +722,15 @@ if __name__ == "__main__":
             "default": GeneralLlm(
                 model="openrouter/z-ai/glm-5.3-flash",
                 temperature=0.3,
-                timeout=40,
+                timeout=120,
                 allowed_tries=2,
-                max_tokens=4096,
+                max_tokens=16384,
             ),
             "summarizer": GeneralLlm(
                 model="openrouter/z-ai/glm-5.3-flash",
-                timeout=40,
+                timeout=120,
                 allowed_tries=2,
-                max_tokens=4096,
+                max_tokens=16384,
             ),
             "researcher": GeneralLlm(
                 model="openrouter/perplexity/sonar",
@@ -736,9 +740,9 @@ if __name__ == "__main__":
             ),
             "parser": GeneralLlm(
                 model="openrouter/z-ai/glm-5.3-flash",
-                timeout=40,
+                timeout=120,
                 allowed_tries=2,
-                max_tokens=4096,
+                max_tokens=16384,
             ),
         },
     )
