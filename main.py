@@ -720,10 +720,26 @@ if __name__ == "__main__":
                 temperature=0.3,
                 timeout=40,
                 allowed_tries=2,
+                max_tokens=4096,
             ),
-            "summarizer": "openrouter/openai/gpt-4o-mini",
-            "researcher": "openrouter/perplexity/sonar",
-            "parser": "openrouter/openai/gpt-4o-mini",
+            "summarizer": GeneralLlm(
+                model="openrouter/openai/gpt-4o-mini",
+                timeout=40,
+                allowed_tries=2,
+                max_tokens=4096,
+            ),
+            "researcher": GeneralLlm(
+                model="openrouter/perplexity/sonar",
+                timeout=40,
+                allowed_tries=2,
+                max_tokens=4096,
+            ),
+            "parser": GeneralLlm(
+                model="openrouter/openai/gpt-4o-mini",
+                timeout=40,
+                allowed_tries=2,
+                max_tokens=4096,
+            ),
         },
     )
 
