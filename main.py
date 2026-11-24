@@ -716,14 +716,14 @@ if __name__ == "__main__":
         extra_metadata_in_explanation=True,
         llms={
             "default": GeneralLlm(
-                model="openrouter/openai/gpt-4o-mini",
+                model="openrouter/z-ai/glm-5.3-flash",
                 temperature=0.3,
                 timeout=40,
                 allowed_tries=2,
                 max_tokens=4096,
             ),
             "summarizer": GeneralLlm(
-                model="openrouter/openai/gpt-4o-mini",
+                model="openrouter/z-ai/glm-5.3-flash",
                 timeout=40,
                 allowed_tries=2,
                 max_tokens=4096,
@@ -735,7 +735,7 @@ if __name__ == "__main__":
                 max_tokens=4096,
             ),
             "parser": GeneralLlm(
-                model="openrouter/openai/gpt-4o-mini",
+                model="openrouter/z-ai/glm-5.3-flash",
                 timeout=40,
                 allowed_tries=2,
                 max_tokens=4096,
